@@ -37,7 +37,8 @@ namespace GloboTicket.Services.ShoppingBasket
 
             services.AddDbContext<ShoppingBasketDbContext>(options =>
             {
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
+                options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection"));
+
             });
 
             services.AddSwaggerGen(c =>
